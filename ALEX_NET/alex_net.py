@@ -8,6 +8,8 @@ import torchvision.transforms as transforms
 # Modified to fit with CIFAR10 data
 # https://pytorch.org/vision/main/_modules/torchvision/models/alexnet.html
 
+# Best accuracy achieved: 87.42%, trained on a P100 GPU.
+
 class AlexNet(nn.Module):
     def __init__(self, num_classes=10):
         super(AlexNet, self).__init__()
@@ -110,4 +112,4 @@ if __name__ == '__main__':
     accuracy = 100 * correct / total
     print(f"Accuracy on the test set: {accuracy}%")
 
-# best accuracy achieved is 87.42%
+# Best accuracy achieved: 87.42%, trained on a P100 GPU.

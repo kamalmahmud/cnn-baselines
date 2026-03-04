@@ -4,6 +4,8 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 
+# Best accuracy achieved: 99.28%, trained on a P100 GPU.
+
 class MnistCNN(nn.Module):
     def __init__(self):
         super(MnistCNN,self).__init__()
