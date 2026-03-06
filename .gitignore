@@ -25,6 +25,7 @@ Thumbs.db
 *.log
 
 # ML artifacts / outputs (edit folders to match your project)
+expired/
 runs/
 wandb/
 checkpoints/
