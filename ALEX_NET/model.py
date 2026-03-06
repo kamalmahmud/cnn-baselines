@@ -1,9 +1,4 @@
-import torch
 import torch.nn as nn
-import torch.optim as optim
-import torchvision
-import torchvision.transforms as transforms
-
 
 # Modified to fit with CIFAR10 data
 # https://pytorch.org/vision/main/_modules/torchvision/models/alexnet.html
