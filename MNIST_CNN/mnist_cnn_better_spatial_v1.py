@@ -6,9 +6,9 @@ import torchvision.transforms as transforms
 
 # Best accuracy achieved: 99.28%, trained on a P100 GPU.
 
-class MnistCNN(nn.Module):
+class MnistCNN_V1(nn.Module):
     def __init__(self):
-        super(MnistCNN,self).__init__()
+        super(MnistCNN_V1,self).__init__()
         # input is 1x28x28, so input channels = 1
 
         self.conv1 = nn.Conv2d(1,32,kernel_size=3,padding='same')
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     trainLoader, testLoader = get_data_loaders(root)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = MnistCNN().to(device)
+    model = MnistCNN_V1().to(device)
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=0.001)

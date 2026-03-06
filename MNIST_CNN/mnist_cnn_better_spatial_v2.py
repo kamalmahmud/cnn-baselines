@@ -7,9 +7,9 @@ import torchvision.transforms as transforms
 # Best accuracy achieved: 99.15%, trained on a P100 GPU.
 # This model uses convolutional layer for classification instead of fully connected layers.
 
-class MnistCNN(nn.Module):
+class MnistCNN_V2(nn.Module):
     def __init__(self):
-        super(MnistCNN,self).__init__()
+        super(MnistCNN_V2,self).__init__()
         # input is 1x28x28, so input channels = 1
         self.conv1 = nn.Conv2d(1,32,kernel_size=3,padding='same') #28
         self.conv2 = nn.Conv2d(32,64,kernel_size=3,padding='same') #14
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     trainLoader, testLoader = get_data_loaders(root)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = MnistCNN().to(device)
+    model = MnistCNN_V2().to(device)
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=0.001)
